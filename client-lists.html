@@ -325,7 +325,6 @@
     $.ajax({
         url: "https://unbloody-curlew-0788.dataplicity.io/api/zamboanga-api.php",
         type: 'get',
-        dataType: 'json',
         data: $('form').serialize(),
         cache:false,
         success: function(data){
@@ -339,7 +338,7 @@
                 event_data += '<td>'+value.complete_add+'</td>';
                 event_data += '</tr>';
             });
-            $("#tbody").append(event_data);
+            $("tbody").append(event_data);
         },
         error: function(d){
             /*console.log("error");*/
