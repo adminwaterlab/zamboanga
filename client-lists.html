@@ -54,25 +54,6 @@
                     <span>Dashboard</span></a>
             </li>
 
-            <!-- Nav Item - Utilities Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                    aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-fw fa-wrench"></i>
-                    <span>Utilities</span>
-                </a>
-                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Custom Utilities:</h6>
-                        <a class="collapse-item" href="utilities-color.html">Colors</a>
-                        <a class="collapse-item" href="utilities-border.html">Borders</a>
-                        <a class="collapse-item" href="utilities-animation.html">Animations</a>
-                        <a class="collapse-item" href="utilities-other.html">Other</a>
-                    </div>
-                </div>
-            </li>
-
         </ul>
         <!-- End of Sidebar -->
 
@@ -273,18 +254,7 @@
         cache:false,
         success: function(data){
             /*console.log(data);*/
-            var event_data = '';
-            $.each(data, function(index, value){
-                console.log(value);
-                event_data += '<tr>';
-                event_data += '<td>'+value.company+'</td>';
-                event_data += '<td>'+value.owner+'</td>';
-                event_data += '<td>'+value.contact_no+'</td>';
-                event_data += '<td>'+value.email+'</td>';
-                event_data += '<td>'+value.complete_add+'</td>';
-                event_data += '</tr>';
-            });
-            $("#tbody").html(event_data);
+            $("#tbody").html(data);
         },
         error: function(d){
             /*console.log("error");*/
