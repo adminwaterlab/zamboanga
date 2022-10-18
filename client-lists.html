@@ -359,11 +359,12 @@
     <script src="js/demo/datatables-demo.js"></script>
     <script type="text/javascript">
  window.addEventListener("load", function(){
+    var form = $('#location');
     $.ajax({
         url: "https://unbloody-curlew-0788.dataplicity.io/api/zamboanga-api.php",
         type: 'get',
         dataType: 'json',
-        data: $('#location').serialize(),
+        data: $(form).serialize(),
         cache:false,
         success: function(data){
             /*console.log(data);*/
