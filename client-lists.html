@@ -251,22 +251,20 @@
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
+                                            <th>Establishment</th>
+                                            <th>Owner</th>
+                                            <th>Contact No</th>
+                                            <th>Email</th>
+                                            <th>Address</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                            <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
+                                            <th>Establishment</th>
+                                            <th>Owner</th>
+                                            <th>Contact No</th>
+                                            <th>Email</th>
+                                            <th>Address</th>
                                         </tr>
                                     </tfoot>
                                     <tbody id="tbody">
@@ -325,6 +323,7 @@
     $.ajax({
         url: "https://unbloody-curlew-0788.dataplicity.io/api/zamboanga-api.php",
         type: 'get',
+        dataType: 'json',
         data: $('form').serialize(),
         cache:false,
         success: function(data){
@@ -333,12 +332,14 @@
             $.each(data, function(index, value){
                 console.log(value);
                 event_data += '<tr>';
+                event_data += '<td>'+value.company+'</td>';
                 event_data += '<td>'+value.owner+'</td>';
+                event_data += '<td>'+value.contact_no+'</td>';
                 event_data += '<td>'+value.email+'</td>';
                 event_data += '<td>'+value.complete_add+'</td>';
                 event_data += '</tr>';
             });
-            $("tbody").append(event_data);
+            $("#tbody").append(event_data);
         },
         error: function(d){
             /*console.log("error");*/
