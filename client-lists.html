@@ -269,7 +269,7 @@
                                             <th>Salary</th>
                                         </tr>
                                     </tfoot>
-                                    <tbody>
+                                    <tbody id="tbody">
                                         
                                     </tbody>
                                 </table>
@@ -330,14 +330,13 @@
         cache:false,
         success: function(data){
             /*console.log(data);*/
-            $("#loading").hide();
             var event_data = '';
             $.each(data, function(index, value){
-                /*console.log(value);*/
-                event_data += '<tr class="'+value.message_status+'">';
-                event_data += '<td>'+value.message_created+'</td>';
-                event_data += '<td>'+value.message_from+'</td>';
-                event_data += '<td><a href="'+value.link+'">'+value.message_content+'</a></td>';
+                console.log(value);
+                event_data += '<tr>';
+                event_data += '<td>'+value.owner+'</td>';
+                event_data += '<td>'+value.email+'</td>';
+                event_data += '<td>'+value.complete_add+'</td>';
                 event_data += '</tr>';
             });
             $("#tbody").append(event_data);
