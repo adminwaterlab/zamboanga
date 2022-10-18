@@ -252,8 +252,8 @@
         dataType: 'json',
         data: $('form').serialize(),
         cache:false,
-        success: function(data){
-            $("#tbody").html(data);
+        success: function(data, textStatus){
+            $("tbody").html(data);
         },
         error: function(d){
             /*console.log("error");*/
